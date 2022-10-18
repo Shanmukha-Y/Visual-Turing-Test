@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.carousel .control-dots {
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    left:100px !important;
+    padding: 0;
+    top:"40px"!important;
+    text-align: center;
+    width: 74% !important;
+    position: absolute!important;
+    z-index: 1;
+}
+
+
+
+* { -webkit-tap-highlight-color: rgba(0,0,0,0); }
