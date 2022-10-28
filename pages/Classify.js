@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import IMAGES from "../Images/Images";
+// import IMAGES from "../Images/Images";
 import { useRouter } from "next/router";
 import { useState, useEffect, useRef } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -40,11 +40,9 @@ const Classify = (props) => {
 
   const [images, setImages] = useState(imagesArray);
 
-  const [image, setImage] = useState(IMAGES[0].path);
+  // const [image, setImage] = useState(IMAGES[0].path);
 
   const [resSt, setResultSt] = useRecoilState(resultState);
-
-  
 
   const [callbackSetup, setCallbackSetup] = useState(false);
 
@@ -55,7 +53,6 @@ const Classify = (props) => {
 
   let setFinalRes = useSetRecoilState(finalSurvState);
 
- 
   // const [finalRes, setFinalRes] = useRecoilState(finalSurvState);
 
   //  const [ctImage, setCtImage] = useRecoilState(ctImagesState);
@@ -121,7 +118,7 @@ const Classify = (props) => {
       return index + 1 == selectedIndex;
     });
 
-    console.log('newImageArray : ',newImageArray)
+    console.log("newImageArray : ", newImageArray);
 
     let imP = newImageArray[0].image.asset;
     let imI = selectedIndex;
@@ -148,7 +145,7 @@ const Classify = (props) => {
   function handleSubmit(event) {
     let d = new Date();
     let date = d.toString();
-    handleChange(totalIm)
+    handleChange(totalIm);
     if (!callbackSetup) {
       setupConsoleCallback(() => {
         var finalJson = {
@@ -158,10 +155,10 @@ const Classify = (props) => {
 
         setFinalRes(finalJson);
 
-        localStorage.setItem('finalRes', JSON.stringify(finalJson));
+        localStorage.setItem("finalRes", JSON.stringify(finalJson));
 
-        setCallbackSetup(true);  
-        
+        setCallbackSetup(true);
+
         //submitSurvey(finalJson);
         delay(100).then(() => (location.href = "/Loader"));
       });
@@ -175,8 +172,6 @@ const Classify = (props) => {
 
     //submitSurvey(finalJson);
   }
-
-  
 
   // function submitSurvey(payload) {
   //   fetch("/api/submitSurvey", {

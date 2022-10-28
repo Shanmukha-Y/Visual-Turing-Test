@@ -4,7 +4,7 @@ import TypeWriter from "typewriter-effect";
 import { motion } from "framer-motion";
 import { DownloadIcon } from "@heroicons/react/solid";
 import { ChatIcon } from "@heroicons/react/solid";
-import { ArrowRightIcon,ChevronDoubleRightIcon } from "@heroicons/react/solid";
+import { ArrowRightIcon, ChevronDoubleRightIcon } from "@heroicons/react/solid";
 import { LogoutIcon } from "@heroicons/react/outline";
 const scaleVariants1 = {
   whileInView: {
@@ -107,15 +107,16 @@ const MainContainer = () => {
           <div className="flex justify-center mt-6">
             <img
               className="h-[20rem] object-contain border-r-2"
-              src="/100081_2000_400_40_1-058.dcm.png"
+              src="/soft.png"
             ></img>
           </div>
           <div className="mt-6">
             <p className="tracking-wide w-[50rem] text-gray-800 text-lg lg:leading-8">
-            Just like human radiologists, AI-based methods also require training by letting it “see” a
-great diversity of human images and pathologies. And in order to make the AI as robust
-and effective as possible, an abundance of training images is needed -- the more
-images the better.
+              Just like human radiologists, AI-based methods also require
+              training by letting it “see” a great diversity of human images and
+              pathologies. And in order to make the AI as robust and effective
+              as possible, an abundance of training images is needed -- the more
+              images the better.
             </p>
           </div>
           <div className="mt-5">
@@ -157,26 +158,28 @@ images the better.
           </div>
           <div className="mt-5">
             <p className="tracking-wide  w-[50rem] text-gray-800 text-lg lg:leading-8">
-              The below are a few typical CT slice images of a chest study.
+              The below are a few typical CT slice images of a chest study. You
+              will encounter 3 windows: Soft Tissue, Bone and Lung window
+              versions of the CT scans.
             </p>
           </div>
           <div className="flex flex-wrap space-x-4 justify-center mt-6">
             <img
               className="h-[11rem] object-contain border-r-2"
-              src="/100002_2001_400_40_1-059.dcm.png"
+              src="/soft.png"
             ></img>
             <img
               className="h-[11rem] object-contain border-r-2"
-              src="/100037_2000_400_40_1-066.dcm.png"
+              src="/bone.png"
             ></img>
             <img
               className="h-[11rem] object-contain border-r-2"
-              src="/100142_2000_400_40_1-088.dcm.png"
+              src="/lung.png"
             ></img>
-            <img
+            {/* <img
               className="h-[11rem] object-contain border-r-2"
               src="/100461_2001_400_40_1-050.dcm.png"
-            ></img>
+            ></img> */}
           </div>
           <div className="mt-6">
             <p className="tracking-wide  w-[50rem] text-gray-800 text-lg lg:leading-8">
@@ -205,8 +208,8 @@ images the better.
           </div>
           <div className="mt-5 text-center">
             <p className="tracking-wide font-bold  w-[50rem] text-red-800 text-md not-italic lg:leading-8">
-            Note that you can always click the “Leave” button if you wish to exit the study
-prematurely.
+              Note that you can always click the “Leave” button if you wish to
+              exit the study prematurely.
             </p>
           </div>
         </motion.div>
