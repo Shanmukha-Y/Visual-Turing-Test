@@ -185,7 +185,7 @@ const MainContainer = () => {
             <p className="tracking-wide  w-[50rem] text-gray-800 text-lg lg:leading-8">
               In the following you will see a series of images, one at a time,
               and you will need to decide whether the image is real or
-              algorithmically generated. The screen will looks like this:
+              algorithmically generated. The screen will look like this:
             </p>
           </div>
           <div className="flex justify-center mt-6">
@@ -201,9 +201,9 @@ const MainContainer = () => {
               of your choice. Select “texture” if you feel the texture is off or
               “anatomy” if you feel the anatomy is incorrect. You can also
               select both. Once you are sure of your choices you can click the
-              “Commit” which will change the screen to the next image. The
-              progress bar below the image informs you how many images are still
-              left for you to rate.
+              "Submit" which will change the screen to the next image. The
+              progress bar on the right of the image informs you how many images are still
+              left for you to rate. In the end the "Finish" button will be available to complete the study.
             </p>
           </div>
           <div className="mt-5 text-center">
