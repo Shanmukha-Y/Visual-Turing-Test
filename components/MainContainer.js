@@ -134,11 +134,6 @@ const MainContainer = () => {
           </div>
           <div className="mt-5">
             <p className="tracking-wide w-[50rem] text-gray-800 text-lg lg:leading-8">
-              Before beginning the study you will receive instructions and then
-              you will need to pass a test. If you pass the test you will be
-              asked to provide information on your demographics and medical
-              expertise and then you will be shown the first image. If you do
-              not pass the test you can repeat the instructions and the test.
               Real and simulated images will be presented in random order, and
               you will be able to opt out at any time. No information will be
               collected that can link you to the responses you gave or that you
