@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-// import IMAGES from "../Images/Images";
+import IMAGES from "../Images/Images";
 import { useRouter } from "next/router";
 import { useState, useEffect, useRef } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -43,7 +43,7 @@ const Classify = (props) => {
  
  const [images, setImages] = useState(imagesArray);
  
-//  const [image, setImage] = useState(IMAGES[0].path);
+ const [image, setImage] = useState(IMAGES[0].path);
  
  const [resSt, setResultSt] = useRecoilState(resultState);
  
@@ -144,8 +144,8 @@ const Classify = (props) => {
        asset: imP,
      },
      choice: selected,
-     reason1: checked[0] ? checked[0] : "",
-     reason2: checked.length > 1 ? checked[1] : "",
+     reason: checked[0] ? checked[0] : "",
+    // reason2: checked.length > 1 ? checked[1] : "",
    };
  
    // let newList = [...resSt,reJs];
