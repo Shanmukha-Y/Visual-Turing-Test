@@ -191,20 +191,19 @@ const MainContainer = () => {
           </div>
           <div className="mt-6">
             <p className="tracking-wide  w-[50rem] text-gray-800 text-lg lg:leading-8">
-              If this were a segment of the study you would select either “real”
-              or “fake” and if you selected “fake” you would tell us the reason
-              of your choice. Select “texture” if you feel the texture is off or
-              “anatomy” if you feel the anatomy is incorrect. You can also
-              select both. Once you are sure of your choices you can click the
-              "Submit" which will change the screen to the next image. The
-              progress bar on the right of the image informs you how many images are still
-              left for you to rate. In the end the "Finish" button will be available to complete the study.
+              Now you would select "Real" or "Fake" based on your opininon of the image shown. If you select "Fake" 
+              please notice the sub question asking you to choose an option that tells how fake the image looks like. 
+              Once you are sure of your choices you can click the "Submit" button which will change the screen to the next image. 
+              The progress bar on the right of the image informs you how many images are still
+              left for you to rate. In the end you will be asked to tell us your level of expertise with medical radiology 
+              and a "Finish" button will be available to complete the study. Upon clicking "Finish" wait for 2 seconds to see that 
+              a completion message is now displayed to you.
             </p>
           </div>
           <div className="mt-5 text-center">
             <p className="tracking-wide font-bold  w-[50rem] text-red-800 text-md not-italic lg:leading-8">
               Note that you can always click the “Leave” button if you wish to
-              exit the study prematurely.
+              exit the study prematurely. In this case the responses are not recorded.
             </p>
           </div>
         </motion.div>
