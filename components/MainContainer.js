@@ -197,7 +197,9 @@ const MainContainer = () => {
               The progress bar on the right of the image informs you how many images are still
               left for you to rate. In the end you will be asked to tell us your level of expertise with medical radiology 
               and a "Finish" button will be available to complete the study. Upon clicking "Finish" wait for 2 seconds to see that 
-              a completion message is now displayed to you.
+              a completion message is now displayed to you. If you wish to do the study once again, click on the "Go to Home" button 
+              and start the test again.
+
             </p>
           </div>
           <div className="mt-5 text-center">
