@@ -102,7 +102,7 @@ const Question = ({ load, selectedSet, fakeSelSet, checkedSet, selectedI, checke
              >
                <motion.div>
                  <p className="tracking-wide font-semibold text-gray-800 text-md lg:leading-8">
-                   What's the reason for this choice :
+                   How fake is the shown image :
                  </p>
                </motion.div>
  
