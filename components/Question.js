@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
  
-const Question = ({ load, selectedSet, fakeSelSet, checkedSet, selectedI, checkedI, fakeSelI }) => {
+const Question = ({ load, selectedSet, fakeSelSet, checkedSet, selectedI, checkedI, fakeSelI ,reqI}) => {
 //   const [selected, setSelected] = useState("");
 //   const [fakeSel, setFakeSel] = useState(false);
 //   const [checked, setChecked] = useState([]);
@@ -147,6 +147,18 @@ const Question = ({ load, selectedSet, fakeSelSet, checkedSet, selectedI, checke
              </motion.div>
            </AnimatePresence>
          )}
+         <div className="mt-3">
+         {(reqI && selectedI.length==0)&& (
+                   <span className="text-red-500">
+                     - Please Choose an option
+                   </span>
+                 )}
+         {(reqI &&  selectedI=="Fake" && checkedI.length==0)&& (
+           <span className="text-red-500">
+             - Please Choose an option
+           </span>
+         )}      
+         </div>
        </motion.div>
      )}
    </div>
@@ -154,3 +166,5 @@ const Question = ({ load, selectedSet, fakeSelSet, checkedSet, selectedI, checke
 };
  
 export default Question;
+ 
+
