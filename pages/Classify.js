@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-// import IMAGES from "../Images/Images";
+//import IMAGES from "../Images/Images";
 import { useRouter } from "next/router";
 import { useState, useEffect, useRef } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -43,13 +43,15 @@ const Classify = (props) => {
  
  const [images, setImages] = useState(imagesArray);
  
-//  const [image, setImage] = useState(IMAGES[0].path);
+// const [image, setImage] = useState(IMAGES[0].path);
  
  const [resSt, setResultSt] = useRecoilState(resultState);
  
  const [callbackSetup, setCallbackSetup] = useState(false);
  
  const [disable, setDisable] = useState(false);
+ 
+ const [req, setReq] = useState(false);
  
  const stateRef = useRef();
  stateRef.current = resSt;
@@ -66,6 +68,7 @@ const Classify = (props) => {
  // const [bHide, setBhide] = useState(true);
  
  var hp = (currentIt / totalIm) * 100;
+ 
  
  let btnRef = useRef();
  
@@ -124,7 +127,6 @@ const Classify = (props) => {
  
  function handleChange(selectedIndex) {
    console.log("s I :", selectedIndex);
- 
    var newImageArray = images.filter(function (el, index) {
      return index + 1 == selectedIndex;
    });
@@ -243,13 +245,30 @@ const Classify = (props) => {
                  onClick={() => {
                    console.log("cI", currentIt);
  
-                   Loader();
-                   if (currentIt == totalIm) {
-                     handleChange(totalIm);
-                     updateLast();
-                   } else {
-                     clickHandler();
+                   if(selected.length>1 && selected=="Real"){
+                     Loader();
+                     if (currentIt == totalIm) {
+                       handleChange(totalIm);
+                       updateLast();
+                     } else {
+                       clickHandler();
+                     }
+                     setReq(false);
                    }
+                   else if(selected.length>1 && selected=="Fake" && checked.length > 0){
+                     Loader();
+                     if (currentIt == totalIm) {
+                       handleChange(totalIm);
+                       updateLast();
+                     } else {
+                       clickHandler();
+                     }
+                     setReq(false);
+                   }
+                   else{
+                     setReq(true);
+                   }
+                  
                  }}
                  className={"group cursor-pointer "}
                >
@@ -349,6 +368,7 @@ const Classify = (props) => {
            selectedI={selected}
            checkedI={checked}
            fakeSelI={fakeSel}
+           reqI={req}
          />
        )}
      </div>
@@ -358,6 +378,7 @@ const Classify = (props) => {
        whileInView={scaleVariants5.whileInView}
        className="flex flex-row lg:space-x-14 lg:space-y-0 space-y-5 justify-center pt-[2rem] mb-[3rem]"
      >
+       {currentIt != totalIm + 1 && (
        <motion.a
          whileTap={{ scale: 0.9 }}
          href="/"
@@ -367,7 +388,7 @@ const Classify = (props) => {
          <p className="tracking-wider">Leave</p>
          <LogoutIcon className="h-7 w-7 animate-pulse hover:text-darkBgLight" />
        </motion.a>
- 
+        )}
        <motion.button
          id="submit"
          ref={btnRef}
