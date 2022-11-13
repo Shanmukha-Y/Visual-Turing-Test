@@ -4,9 +4,6 @@ import { useState } from "react";
 import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
  
 const Question = ({ load, selectedSet, fakeSelSet, checkedSet, selectedI, checkedI, fakeSelI ,reqI}) => {
-//   const [selected, setSelected] = useState("");
-//   const [fakeSel, setFakeSel] = useState(false);
-//   const [checked, setChecked] = useState([]);
  
  const handleCheck = (event) => {
    var updatedList = [...checkedI];
