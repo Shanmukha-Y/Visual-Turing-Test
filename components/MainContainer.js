@@ -127,9 +127,8 @@ const MainContainer = () => {
               a set of medical images, one at a time, and you will be asked
               whether you think they came from a human scan (real) or were
               generated from our algorithm (fake). If you think an image was
-              algorithmically generated (fake) you will be asked why you think
-              it is fake. Does it look fake because the texture is off or
-              because the anatomy is wrong or both?
+              algorithmically generated (fake) you will be asked how fake do you think the image is? 
+              Is it Clearly Fake? Somewhat Real? or Almost Real?
             </p>
           </div>
           <div className="mt-5">
