@@ -3,16 +3,20 @@ import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
  
-const Question = ({ load, selectedSet, fakeSelSet, checkedSet, selectedI, checkedI, fakeSelI ,reqI}) => {
+const Question = ({ load, selectedSet, fakeSelSet, checkedSet, selectedI,selectedFI,setSelectedFI, checkedI, fakeSelI ,reqI}) => {
+//   const [selected, setSelected] = useState("");
+//   const [fakeSel, setFakeSel] = useState(false);
+//   const [checked, setChecked] = useState([]);
  
  const handleCheck = (event) => {
-   var updatedList = [...checkedI];
-   if (event.target.checked) {
-     updatedList = [...checkedI, event.target.value];
-   } else {
-     updatedList.splice(checkedI.indexOf(event.target.value), 1);
-   }
-   checkedSet(updatedList);
+   setSelectedFI(event.target.value);
+   // var updatedList = [...checkedI];
+   // if (event.target.checked) {
+   //   updatedList = [...checkedI, event.target.value];
+   // } else {
+   //   updatedList.splice(checkedI.indexOf(event.target.value), 1);
+   // }
+   // checkedSet(updatedList);
  };
  
  console.log("checked : ", checkedI);
@@ -99,7 +103,7 @@ const Question = ({ load, selectedSet, fakeSelSet, checkedSet, selectedI, checke
              >
                <motion.div>
                  <p className="tracking-wide font-semibold text-gray-800 text-md lg:leading-8">
-                   How fake is the shown image :
+                   What's the reason for this choice :
                  </p>
                </motion.div>
  
@@ -110,7 +114,7 @@ const Question = ({ load, selectedSet, fakeSelSet, checkedSet, selectedI, checke
                      type="radio"
                      value="Almost Real"
                      name="aReal"
-                     //checked={selected == "Texture Looks Fake"}
+                     checked={selectedFI == "Almost Real"}
                    />
                    <p className="ml-2 tracking-wider">Almost Real</p>
                  </motion.div>
@@ -123,7 +127,7 @@ const Question = ({ load, selectedSet, fakeSelSet, checkedSet, selectedI, checke
                      type="radio"
                      value="Somewhat Real"
                      name="sReal"
-                     //checked={selected == "Anatomy Looks Fake"}
+                     checked={selectedFI == "Somewhat Real"}
                    />
                    <p className="ml-2 tracking-wider">Somewhat Real</p>
                  </motion.div>
@@ -136,7 +140,7 @@ const Question = ({ load, selectedSet, fakeSelSet, checkedSet, selectedI, checke
                      type="radio"
                      value="Clearly Fake"
                      name="cFake"
-                     //checked={selected == "Anatomy Looks Fake"}
+                     checked={selectedFI == "Clearly Fake"}
                    />
                    <p className="ml-2 tracking-wider">Clearly Fake</p>
                  </motion.div>
@@ -150,7 +154,7 @@ const Question = ({ load, selectedSet, fakeSelSet, checkedSet, selectedI, checke
                      - Please Choose an option
                    </span>
                  )}
-         {(reqI &&  selectedI=="Fake" && checkedI.length==0)&& (
+         {(reqI &&  selectedI=="Fake" && selectedFI.length==0)&& (
            <span className="text-red-500">
              - Please Choose an option
            </span>
@@ -163,5 +167,3 @@ const Question = ({ load, selectedSet, fakeSelSet, checkedSet, selectedI, checke
 };
  
 export default Question;
- 
-

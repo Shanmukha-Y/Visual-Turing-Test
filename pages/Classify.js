@@ -42,7 +42,11 @@ const Classify = (props) => {
   const [selected, setSelected] = useState("");
  const [selectedE, setSelectedE] = useState("");
  const [fakeSel, setFakeSel] = useState(false);
- const [checked, setChecked] = useState([]);
+// const [checked, setChecked] = useState([]);
+ 
+const [selectedF, setSelectedF] = useState("");
+
+//  const [checked, setChecked] = useState([]);
  
  const [images, setImages] = useState(imagesArray);
  
@@ -112,7 +116,8 @@ const Classify = (props) => {
  
  function Loader() {
    setSelected("");
-   setChecked([]);
+   setSelectedF("");
+   //setChecked([]);
    setFakeSel(false);
    !isLoading && setIsLoading(true);
    delay(500).then(() => setIsLoading(false));
@@ -149,7 +154,7 @@ const Classify = (props) => {
        asset: imP,
      },
      choice: selected,
-     reason: checked[0] ? checked[0] : "",
+     reason: selectedF,
     // reason2: checked.length > 1 ? checked[1] : "",
    };
  
@@ -260,7 +265,7 @@ const Classify = (props) => {
                      }
                      setReq(false);
                    }
-                   else if(selected.length>1 && selected=="Fake" && checked.length > 0){
+                   else if(selected.length>1 && selected=="Fake" && selectedF.length > 0){
                      Loader();
                      if (currentIt == totalIm) {
                        handleChange(totalIm);
@@ -369,10 +374,12 @@ const Classify = (props) => {
            load={isLoading}
            selectedSet={setSelected}
            fakeSelSet={setFakeSel}
-           checkedSet={setChecked}
+          //  checkedSet={setChecked}
            selectedI={selected}
-           checkedI={checked}
+          //  checkedI={checked}
            fakeSelI={fakeSel}
+           selectedFI={selectedF}
+           setSelectedFI={setSelectedF}
            reqI={req}
          />
        )}
