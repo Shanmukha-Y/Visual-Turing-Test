@@ -3,13 +3,15 @@ import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
  
-const Question = ({ load, selectedSet, fakeSelSet, checkedSet, selectedI,selectedFI,setSelectedFI, checkedI, fakeSelI ,reqI}) => {
+const Question = ({ load, selectedSet, fakeSelSet, checkedSet, setAreas, selectedI,selectedFI,setSelectedFI, checkedI, fakeSelI ,reqI,setOpenAQ}) => {
 //   const [selected, setSelected] = useState("");
 //   const [fakeSel, setFakeSel] = useState(false);
 //   const [checked, setChecked] = useState([]);
  
  const handleCheck = (event) => {
    setSelectedFI(event.target.value);
+   setOpenAQ(true);
+   setAreas([]);
    // var updatedList = [...checkedI];
    // if (event.target.checked) {
    //   updatedList = [...checkedI, event.target.value];
@@ -60,6 +62,7 @@ const Question = ({ load, selectedSet, fakeSelSet, checkedSet, selectedI,selecte
              className="radio-btn overflow-hidden flex border-r-2"
              onClick={() => {
                selectedSet("Real");
+               setSelectedFI("");
                fakeSelSet(false);
              }}
            >
@@ -167,3 +170,5 @@ const Question = ({ load, selectedSet, fakeSelSet, checkedSet, selectedI,selecte
 };
  
 export default Question;
+ 
+
