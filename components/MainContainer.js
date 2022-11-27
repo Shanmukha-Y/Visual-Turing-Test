@@ -187,11 +187,17 @@ const MainContainer = () => {
               className="h-[24rem] object-contain border-r-2"
               src="/UI-Image.png"
             ></img>
+            <img
+              className="h-[24rem] object-contain border-r-2"
+              src="/areaUI.png"
+            ></img>
           </div>
+          
           <div className="mt-6">
             <p className="tracking-wide  w-[50rem] text-gray-800 text-lg lg:leading-8">
               Now you would select "Real" or "Fake" based on your opininon of the image shown. If you select "Fake" 
-              please notice the sub question asking you to choose an option that tells how fake the image looks like. 
+              please notice the sub question asking you to choose an option that tells how fake the image looks like. After choosing a
+              fakeness level, in a pop up window you will be asked to mark the areas that look fake, make sure to submit these selections as well.
               Once you are sure of your choices you can click the "Submit" button which will change the screen to the next image. 
               The progress bar on the right of the image informs you how many images are still
               left for you to rate. In the end you will be asked to tell us your level of expertise with medical radiology 
@@ -200,6 +206,7 @@ const MainContainer = () => {
               and start the test again.
 
             </p>
+            
           </div>
           <div className="mt-5 text-center">
             <p className="tracking-wide font-bold  w-[50rem] text-red-800 text-md not-italic lg:leading-8">
