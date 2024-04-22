@@ -164,7 +164,7 @@ const Classify = (props) => {
  
  
  
-   for (let i = 0; i < snippetCoordinates.length; i++) {
+   for (let i = 0; i < snippetCoordinates?.length; i++) {
      snippetCoordinates[i] = Object.assign(snippetCoordinates[i], {_key:i+1});
    }
  
