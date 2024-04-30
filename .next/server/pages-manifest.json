@@ -2,9 +2,8 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+  "/api/submitSurvey": "pages/api/submitSurvey.js",
   "/Loader": "pages/Loader.js",
   "/Classify": "pages/Classify.js",
-  "/api/submitSurvey": "pages/api/submitSurvey.js",
-  "/Thanks": "pages/Thanks.js",
-  "/": "pages/index.js"
+  "/Thanks": "pages/Thanks.js"
 }

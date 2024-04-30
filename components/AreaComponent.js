@@ -96,8 +96,8 @@ export default function AreaComponent({
     var xC = (areas[0].x + areas[0].width / 2) / 512;
     var yC = (areas[0].y + areas[0].height / 2) / 512;
 
-    console.log(xC, yC);
-    console.log("areas ", areas);
+    //console.log(xC, yC);
+    //console.log("areas ", areas);
   }
 
   //document.querySelectorAll("[data-wrapper='wrapper']").style.setProperty('border', '1px dashed rgba(255, 0, 0, 0.5) !important');

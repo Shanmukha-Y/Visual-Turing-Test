@@ -1,37 +1,25 @@
-import Head from "next/head";
-import Image from "next/image";
-import { useState } from "react";
+
 import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
  
-const Question2 = ({
- load,
- selectedSetE,
- 
- selectedIE,
- }) => {
- //   const [selected, setSelected] = useState("");
- //   const [fakeSel, setFakeSel] = useState(false);
- //   const [checked, setChecked] = useState([]);
- 
- 
- return (
-   <div>
-     {load ? (
-       <motion.div
-         id="Question"
-         className="flex overflow-hidden h-[128px] shadow-md w-[34rem] p-4 bg-white-700 border-4 rounded-lg flex-col "
-       >
+const Question2 = ({load, selectedSetE, selectedIE}) => {
+  return (
+    <div>
+    {
+      load
+      ? <motion.div
+          id="Question"
+          className="flex overflow-hidden h-[128px] shadow-md w-[32rem] p-4 bg-white-700 border-4 rounded-lg flex-col "
+        >
          <div role="status" className="animate-pulse">
            <div className="h-6 bg-gray-300 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
            <div className="h-9 bg-gray-300 rounded-full dark:bg-gray-700 max-w-[420px] mb-2.5"></div>
          </div>
        </motion.div>
-     ) : (
-       <motion.div
-         layout
-         id="Question"
-         className="flex overflow-hidden items-center shadow-md w-[34rem] p-6 bg-white-700 border-4 rounded-lg flex-col "
-       >
+      : <motion.div
+          layout
+          id="Question"
+          className="flex overflow-hidden items-center shadow-md w-[32rem] p-6 bg-white-700 border-4 rounded-lg flex-col "
+        >
          <motion.div layout>
            <motion.p
              layout
@@ -49,10 +37,7 @@ const Question2 = ({
            <motion.div
              layout
              className="radio-btn overflow-hidden flex border-r-2"
-             onClick={() => {
-               selectedSetE("Novice");
-              
-             }}
+             onClick={() => selectedSetE("Novice")}
            >
              <motion.input
                layout
@@ -141,7 +126,7 @@ const Question2 = ({
         
         
        </motion.div>
-     )}
+     }
    </div>
  );
 };

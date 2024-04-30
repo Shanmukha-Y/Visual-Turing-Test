@@ -9,6 +9,39 @@ import { useEffect, useRef } from "react";
 import { atom, selector, useRecoilValue } from "recoil";
 import LoadingBar from "react-top-loading-bar";
 
+const answers = {
+  1: "Fake",
+  2: "Real",
+  3: "Fake",
+  4: "Real",
+  5: "Real",
+  6: "Fake",
+  7: "Fake",
+  8: "Real",
+  9: "Real",
+  10: "Real",
+  11: "Real",
+  12: "Real",
+  13: "Fake",
+  14: "Fake",
+  15: "Real",
+  16: "Real",
+  17: "Fake",
+  18: "Fake",
+  19: "Fake",
+  20: "Real",
+  21: "Fake",
+  22: "Fake",
+  23: "Real",
+  24: "Fake",
+  25: "Real",
+  26: "Real",
+  27: "Fake",
+  28: "Fake",
+  29: "Real",
+  30: "Fake"
+}
+
 const Thanks = () => {
   const finalSu = useRecoilValue(finalSurvState);
 
@@ -19,6 +52,7 @@ const Thanks = () => {
   const [rem, setRem] = useState(true);
 
   const [finalRes, setFinalRes] = useRecoilState(finalSurvState);
+  const [correct, setCorrect] = useState(null)
 
   // const [isLoading, setLoading] = useState(true);
 
@@ -28,12 +62,16 @@ const Thanks = () => {
 
   // const ref = useRef(null);
 
-  // useEffect(() => {
-  //   ref.current.continuousStart();
-  //   const fiR = localStorage.getItem("finalRes");
-
-  //   submitSurvey(JSON.parse(fiR));
-  // }, []);
+  useEffect(() => {
+    
+    const fiR = localStorage.getItem("finalRes");
+    const res = JSON.parse(fiR)
+    console.log(res)
+    setCorrect(res.FinalSurvey.reduce((acc, d) => {
+       return acc + (answers[d.key] === d.choice ? 1 : 0)
+     }, 0))
+    
+  }, []);
 
   // function submitSurvey(payload) {
   //   console.log("tete");
@@ -75,8 +113,12 @@ const Thanks = () => {
         >
           <div className="mx-auto flex  flex-col justify-center text-center items-center max-w-7xl">
             <div className="font-ubuntu font-semibold text-[4.3rem]">
-              Thanks for finishing the study
+              Thank you!
             </div>
+
+            <div className="font-ubuntu font-semibold text-[3rem]" style={{color: "#007f3a"}}>
+              { `You got ${correct === null ? "__" : correct} out of 30 correct.` }
+            </div>                
 
             <motion.a
               whileTap={{ scale: 0.9 }}
