@@ -21,7 +21,7 @@ const Question = ({ load, selectedSet, fakeSelSet, checkedSet, setAreas, selecte
    // checkedSet(updatedList);
  };
  
- console.log("checked : ", checkedI);
+ //console.log("checked : ", checkedI);
  
  const checkList = ["Texture Looks Fake", "Anatomy Looks Fake"];
  return (
@@ -29,7 +29,7 @@ const Question = ({ load, selectedSet, fakeSelSet, checkedSet, setAreas, selecte
      {load ? (
        <motion.div
          id="Question"
-         className="flex overflow-hidden h-[128px] shadow-md w-[34rem] p-4 bg-white-700 border-4 rounded-lg flex-col "
+         className="flex overflow-hidden h-[128px] shadow-md w-[32rem] p-4 bg-white-700 border-4 rounded-lg flex-col "
        >
          <div role="status" className="animate-pulse">
            <div className="h-6 bg-gray-300 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
@@ -41,7 +41,7 @@ const Question = ({ load, selectedSet, fakeSelSet, checkedSet, setAreas, selecte
         
          layout
          id="Question"
-         className="flex overflow-hidden items-center shadow-md w-[34rem] p-6 bg-white-700 border-4 rounded-lg flex-col "
+         className="flex overflow-hidden items-center shadow-md w-[32rem] p-6 bg-white-700 border-4 rounded-lg flex-col "
        >
          <motion.div  layout>
            <motion.p
